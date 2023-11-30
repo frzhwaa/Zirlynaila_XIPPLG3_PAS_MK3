@@ -1,0 +1,218 @@
+/* menambahkan font dari luar */
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* selector yang memilih semua elemen */
+*{
+    /* mengatur jarak di sekitar */
+    margin: 0;
+    /* mengatur jarak di dalam */
+    padding: 0;
+    /* mengontrol bentuk kotak */
+    box-sizing: border-box;
+    /* tampilan font */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* format body */
+body{
+    /* dalam CSS digunakan untuk mengubah suatu elemen menjadi suatu container flexible, yang memungkinkan tata letak (layout) dan penataan elemen anaknya (child elements) secara fleksibel dalam satu dimensi (entah itu horizontal atau vertikal). */
+    display: flex;
+    /* Elemen flex ditempatkan di tengah sumbu utama */
+    justify-content: center;
+    /* penempatan posisi */
+    align-items: center;
+    /*  menentukan tinggi minimum dari suatu elemen. Properti ini memberikan batasan terendah pada tinggi elemen, sehingga elemen tidak akan lebih kecil dari nilai yang ditetapkan, meskipun kontennya lebih kecil. */
+    min-height: 100vh;
+    /* warna background */
+    background: #eedaff;
+}
+
+/* format kotak to do list */
+.box{
+    /* Menentukan posisi kotak relatif terhadap posisi normalnya. */
+    position: relative;
+    /* Menentukan lebar dan tinggi kotak */
+    width: 450px;
+    height: 550px;
+    /* Memberikan sudut bulat. */
+    border-radius: 30px;
+    /* Latar belakang warna */
+    background: #d8aeff;
+    /* memberi jalan didalam kotak */
+    padding: 30px 50px;
+    /* Menambahkan beberapa bayangan kotak untuk efek 3D. */
+    box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25),
+    10px 10px 70px rgba(0, 0, 0, 0.25),
+    inset 5px 5px 10px rgba(0, 0, 0, 0.5),
+    inset 5px 5px 20px rgba(255, 255, 255, 0.5),
+    inset -5px -5px 15px rgba(0, 0, 0, 0.75);
+}
+
+/* format h2 */
+h2{
+    /* lebar penuh */
+    width: 100%;
+    /* menentukan ketebalan huruf */
+    font-weight: 600;
+    /* tata letak ditengah */
+    text-align: center;
+    /* warna teks */
+    color: #ffff;
+    /* ukuran huruf */
+    font-size: 1.75rem;
+    /* menambahkan margin dibagian bawah */
+    margin-bottom: 10px;
+}
+
+/* format untuk elemen input dengan id inputBx */
+#inputBx{
+    /* Menentukan posisi input relatif terhadap posisi normalnya. */
+    position: relative;
+    /* lebar penuh */
+    width: 100%;
+    /* menghilangkan batas dan outline */
+    border: none;
+    outline: none;
+    /* jarak dalam kotak input */
+    padding: 15px 20px;
+    /* memberikan sudut bulat */
+    border-radius: 30px;
+    /* menentukan ukuran huruf */
+    font-size: 1rem;
+    /* Menambahkan beberapa bayangan kotak untuk efek 3D */
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.25),
+    inset 2px 2px 5px rgba(0, 0, 0, 0.5),
+    inset -3px -3px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* format untuk daftar kotak list */
+.box li{
+    /* Menentukan posisi kotak relatif terhadap posisi normalnya. */
+    position: relative;
+    /*  Menghitung lebar yang tidak termasuk 40px. */
+    width: calc(100% - 40px);
+    /* Menyiapkan wadah flex */
+    display: flex;
+    align-items: center;
+    /* latar belakang warna */
+    background: rgb(194, 255, 254);
+    /* margin diatas dan bawah */
+    margin: 15px 0;
+    /* padding dengan nilai yang berbeda */
+    padding: 10px 10px 10px 45px;
+    /* menetapkan tinggi minimum */
+    min-height: 45px;
+    /* mengubah kursor saat diarahkan */
+    cursor: pointer;
+    /* sudut bulat */
+    border-radius: 22.5px;
+    /* warna teks */
+    color: #6e39ff;
+    /* Menambahkan beberapa bayangan kotak untuk efek 3D */
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.25),
+    inset 2px 2px 5px rgba(0, 0, 0, 0.5),
+    inset -3px -3px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Gaya untuk ikon di dalam item daftar. */
+.box li i
+{
+    /* Menentukan posisi ikon secara absolut. */
+    position: absolute;
+    right: -40px;
+    /* menetapkan lebar dan tinggi */
+    width: 30px;
+    height: 30px;
+    /* Menyiapkan properti flex untuk pemusatannya. */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* menetapkan warna latar belakang */
+    background: red;
+    /* Memberikan sudut bulat. */
+    border-radius: 50%;
+    /* Menambahkan beberapa bayangan kotak untuk efek 3D. */
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.25),
+    inset 2px 2px 5px rgba(255, 255, 255, 0.25),
+    inset -3px -3px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Pseudo-element untuk keadaan sebelum ikon. */
+.box li i::before{
+    /* Mendefinisikan konten untuk pseudo-element. Pada kasus ini, kontennya kosong karena kita hanya ingin membuat elemen tambahan untuk dekorasi. */
+    content: '';
+    /* Menetapkan posisi elemen tambahan secara absolut terhadap elemen orang tuanya. */
+    position: absolute;
+    /* Menentukan lebar dan tinggi dari elemen tambahan. */
+    width: 15px;
+    height: 2px;
+    /* Menetapkan warna latar belakang elemen tambahan menjadi putih. */
+    background: #ffff;
+    /* Merotasi elemen tambahan sebesar 45 derajat. Dengan demikian, elemen ini akan tampak seperti garis miring. */
+    transform: rotate(45deg);
+}
+
+/* Pseudo-element untuk keadaan setelah ikon. */
+.box li i::after{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 2px;
+    background: #ffff;
+    /* menghasilkan rotasi elemen tersebut sebesar -45 derajat. Jadi, garis yang dihasilkan akan miring ke arah sebaliknya, ke arah berlawanan dari arah jarum jam. */
+    transform: rotate(-45deg);
+}
+
+/* Gaya untuk elemen bundar sebelum item daftar. */
+.box li::before{
+    content: '';
+    position: absolute;
+    left: 8px;
+    width: 30px;
+    height: 30px;
+    background: #2f363e;
+    border-radius: 50%;
+}
+
+/* Gaya tambahan untuk item daftar dengan kelas "done." */
+.box li.done{
+    background: rgb(88, 170, 252)
+}
+
+.box li.done::after{
+    content: '';
+    position: absolute;
+    left: 16px;
+    width: 12px;
+    height: 6px;
+    border-left: 2px solid #ffff;
+    border-bottom: 2px solid #ffff;
+    transform: rotate(315deg);
+}
+
+/* format untuk id list */
+#list{
+    /* Menentukan posisi wadah relatif terhadap posisi normalnya. */
+    position: relative;
+    /*  Menambahkan margin di bagian atas. */
+    margin-top: 20px;
+    /* Menetapkan tinggi wadah. */
+    height: 350px;
+    /*  Menambahkan scrollbar vertikal jika diperlukan */
+    overflow-y: auto;
+    /* Menambahkan padding di bagian kanan. */
+    padding-right: 10px;
+}
+
+/* Gaya untuk menyesuaikan tampilan scrollbar. */
+::-webkit-scrollbar-track{
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar{
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #ffff;
+}

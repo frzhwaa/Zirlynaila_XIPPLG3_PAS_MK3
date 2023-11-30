@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="shortcut icon" href="assets/img/logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- div sebagai wadah atau kontainer blok yang dapat menampung elemen-elemen HTML lainnya. -->
+    <div class="container">
+        <div class="box">
+            <h2>To Do List</h2>
+            <!-- Elemen input dengan id "inputBx" untuk menambahkan -->
+            <input type="text" placeholder="Tuliskan disini..." id="inputBx">
+            <!-- Elemen ul dengan id "list" sebagai tempat untuk menambahkan daftar -->
+            <ul id="list"></ul>
+        </div>
+    </div>
+</body>
+<script>
+    // Mendapatkan referensi ke elemen-elemen HTML menggunakan document.querySelector.
+    let inputBx = document.querySelector('#inputBx');
+    let list = document.querySelector('#list');
+
+    // Menambahkan event listener pada inputBx untuk mendeteksi ketika tombol "Enter" ditekan.
+    inputBx.addEventListener("keyup", function(event){
+        if (event.key == "Enter"){
+            addItem(this.value)
+            this.value = ""
+        }
+    })
+
+    // Fungsi addItem membuat elemen li baru dengan teks dari input dan menambahkannya ke dalam daftar (ul).
+    let addItem = (inputBx) => {
+        let listItem = document.createElement("li");
+        listItem.innerHTML = `${inputBx}<i></i>`; 
+
+            // Setiap item di daftar memiliki event listener, sehingga ketika diklik, status "done" (selesai) akan bertukar.
+            listItem.addEventListener("click", function(){
+                this.classList.toggle('done');
+            })
+
+            // Setiap item juga memiliki ikon (elemen i) yang jika diklik, item tersebut akan dihapus dari daftar.
+            listItem.querySelector("i").addEventListener("click", function(){
+                listItem.remove();
+            })
+
+            list.appendChild(listItem);
+    }
+</script>
+</html>
